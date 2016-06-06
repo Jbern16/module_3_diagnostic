@@ -21,11 +21,14 @@ group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'factory_girl'
-  gem 'vcr'
-  gem 'webmock'
-
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+  gem 'capybara'
 end
