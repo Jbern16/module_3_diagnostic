@@ -17,7 +17,8 @@ class NrelService
   end
 
   def nearby_stations(zip_code, distance="6")
-    parse(get_stations(zip_code))
+    distance = "6" if distance == ""
+    parse(get_stations(zip_code, distance))
   end
 
   def parse(response)

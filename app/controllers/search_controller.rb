@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @stations = Station.all(params[:q])
+    distance = params[:d][:number]
+    @stations = Station.all(params[:q], distance)
   end
 end

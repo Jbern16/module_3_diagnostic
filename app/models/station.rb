@@ -5,8 +5,8 @@ class Station < OpenStruct
     NrelService.new
   end
 
-  def self.all(zip_code)
-    raw_stations = service.nearby_stations(zip_code)
+  def self.all(zip_code, distance)
+    raw_stations = service.nearby_stations(zip_code, distance)
     raw_stations.map do |station|
       Station.new(station)
     end
