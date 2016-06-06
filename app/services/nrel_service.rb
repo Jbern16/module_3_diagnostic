@@ -4,7 +4,7 @@ class NrelService
     @connection = Faraday.new("'https://api.data.govn/nrel")
   end
 
-  def get(location)
+  def get_stations(location)
     @connection.get do |req|
       req.url "/api/alt-fuel-stations/v1/nearest"
       req.params["api_key"] = ENV["nrel_key"]
@@ -12,7 +12,8 @@ class NrelService
       req.params["location"] = location
   end
 
-  def nearby_stations
+  def nearby_stations(zip_code)
+    parsed(get_stations(zip_code)
   end
 
   def parse(reponse)
