@@ -15,6 +15,13 @@ RSpec.describe "get stations" do
       expect(station).to respond_to :fuel_type_code
       expect(station).to respond_to :distance
       expect(station).to respond_to :access_days_time
+    end
+  end
+  it "has the info we want scoped to distance" do
+    VCR.use_cassette("nrel/service_with_distance") do
+      stations = Station.all("11733", "1")
+
+      expect(stations.count).to eq 0
 
     end
   end

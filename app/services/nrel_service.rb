@@ -12,7 +12,7 @@ class NrelService
       req.params["location"] = location
       req.params["limit"] = "10"
       req.params["fuel_type"] = "ELEC, LPG"
-      req.params["distance"] = distance
+      req.params["radius"] = distance
     end
   end
 
